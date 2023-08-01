@@ -1,0 +1,783 @@
+/*#region fonts*/
+/* 
+    - Google fonts
+  ----------------------
+    - Body Font
+    - Family: [Roboto Flex](https://fonts.google.com/specimen/Roboto)
+    - Weights: 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000
+    - font-family: 'Roboto Flex', sans-serif;
+
+    - Extra Font
+    - Family: [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue)
+    - Weights: 400
+    - font-family: 'Bebas Neue', sans-serif;
+
+    - Number Card Font
+    - Family: [Oswald](https://fonts.google.com/specimen/Oswald?query=oswald&vfonly=true)
+    - Weights: 500
+    - font-family: 'Oswald', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
+
+/*#endregion fonts*/
+
+/*#region root & variables*/
+:root {
+  /* font */
+  --f-family: 'Roboto Flex', sans-serif;
+  --f-extra: 'Bebas Neue', sans-serif;
+  --f-player-std: 'Oswald', sans-serif;
+
+  /* font weight */
+  --f-thin: 100;
+  --f-extralight: 200;
+  --f-light: 300;
+  --f-regular: 400;
+  --f-medium: 500;
+  --f-semibold: 600;
+  --f-bold: 700;
+  --f-extrabold: 800;
+  --f-black: 900;
+  --f-weight: 1000;
+
+  /* Colors */
+  --primary-color: #14161b;
+  --secondary-color: ;
+  --white: white;
+
+  /* Color Transparencies */
+  --white-t10: rgba(255, 255, 255, 0.1);
+  --white-t50: rgba(255, 255, 255, 0.5);
+
+  /* Colors Gray */
+  --gray-100: #f8f8f8;
+  --gray-500: #5d636f;
+
+  /* Buttons */
+  --btn-primary-color: #fff;
+  --btn-secondary-color: #fff;
+  --btn-padding: 0.95rem 1.9rem;
+  --btn-radius: 1.5rem;
+
+  /* Border Radius */
+  --b-radius: 1.5rem;
+  --b-categroy-radius: 1.5rem;
+  --b-answer-radius: 0.9rem;
+
+  /* Shadows */
+  --b-shadow-lg: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+
+  /* Transition */
+  --transition: all 0.2s ease-in-out;
+  --transition-t300: all 300ms ease-in-out;
+  --transform: scale(0.95);
+
+  /* Section Padding */
+  --section-padding: 6.25rem 0;
+  --section-padding-footer: 4rem 0 0 0;
+
+  /* Card themes */
+  /* Carbon Card -- .carbon */
+  --card-bg-color: #1d1f25;
+  --text-color: #e0e0e0;
+  --border-color: #e0e0e0;
+  --bg-opacity: 0.1;
+}
+
+/* Card themes */
+.silver {
+  /* Silver Card -- .silver */
+  --card-bg-color: #e0e0e0;
+  --text-color: #1d1f25;
+  --border-color: #1d1f25;
+  --bg-opacity: 1;
+}
+
+/*#endregion root*/
+
+/*#region general*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+  line-height: 1.75;
+} /*16px*/
+
+body {
+  background-color: var(--white);
+  color: var(--primary-color);
+  font-size: 16px;
+  font-family: 'Roboto Flex', sans-serif;
+  line-height: 20px;
+}
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.125rem;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s linear 0s;
+}
+
+/*#endregion general*/
+
+/*#region header*/
+/* Area */
+.area {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Area Responsive*/
+@media (min-width: 768px) {
+  .area {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .area {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .area {
+    width: 1140px;
+  }
+}
+/* NavBar */
+.navbar-component {
+  background-color: var(--gray-100);
+}
+.navbar-component > .navbar {
+  justify-content: space-between;
+}
+.navbar > .brand {
+  display: block;
+  font-size: 16px;
+  color: #777;
+  margin: 22px;
+}
+.navbar > .toggle {
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  display: inline-block;
+  background-image: none;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  padding: 22px;
+}
+@media (min-width: 768px) {
+  .navbar > .toggle {
+    display: none;
+  }
+}
+.navbar > .toggle > .icon {
+  position: relative;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.navbar > .toggle > .icon,
+.navbar > .toggle > .icon:before,
+.navbar > .toggle > .icon:after {
+  display: block;
+  width: 24px;
+  height: 3px;
+  transition: background-color 0.3s linear, transform 0.3s linear;
+  background-color: var(--primary-color);
+}
+.navbar > .toggle > .icon:before,
+.navbar > .toggle > .icon:after {
+  position: absolute;
+  content: '';
+}
+.navbar > .toggle > .icon:before {
+  top: -8px;
+}
+.navbar > .toggle > .icon:after {
+  top: 8px;
+}
+.navbar > .toggle.-active > .icon {
+  background-color: transparent;
+}
+.navbar > .toggle.-active > .icon:before {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar > .toggle.-active > .icon:after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.navbar > .list {
+  display: none;
+  flex-flow: row nowrap;
+  align-items: center;
+  white-space: nowrap;
+  transition: var(--transition-t300);
+}
+@media (min-width: 768px) {
+  .navbar > .list {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .navbar > .list {
+    overflow-y: hidden;
+    overflow-x: auto;
+    border-top: 1px solid #ddd;
+  }
+}
+.navbar > .list.-on {
+  display: flex;
+}
+.navbar > .list > .item {
+  display: block;
+  flex-shrink: 0;
+  height: 64px;
+  line-height: 64px;
+  padding-left: 22px;
+  padding-right: 22px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-size: 14px;
+  font-weight: var(--f-regular);
+}
+.navbar > .list > .item.-link {
+  line-height: 68px;
+  border-bottom: 4px solid transparent;
+}
+.navbar > .list > .item.-link.-active,
+.navbar > .list > .item.-link:hover,
+.navbar > .list > .item.-link:focus {
+  color: #333;
+  border-bottom-color: var(--primary-color);
+  font-weight: var(--f-medium);
+}
+/*#endregion header*/
+
+/*#region hero*/
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/banner-text.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 82%;
+  height: 100%;
+  pointer-events: none; /* Permite que los eventos del ratón pasen a través de esta capa */
+}
+
+.banner-man {
+  position: absolute;
+  top: 50%; /* Ajustar la posición vertical del banner man */
+  left: 50%; /* Ajustar la posición horizontal del banner man */
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease; /* Transición de la animación al situar el ratón encima */
+  width: 400px;
+}
+
+.hero:hover .banner-man {
+  transform: translate(-50%, -50%) translateX(10px) translateY(-10px); /* Mover el banner man cuando el ratón se sitúa encima */
+}
+/*#endregion hero*/
+
+/*#region players*/
+/* Players section */
+section.players {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: var(--section-padding);
+}
+
+.players-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  text-align: center;
+}
+.players-header p {
+  max-width: 600px;
+  width: 100%;
+}
+/*#endregion players*/
+
+/*#region footer*/
+/* footer */
+section.footer {
+  background-color: var(--primary-color);
+  height: fit-content;
+  padding: var(--section-padding-footer);
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+}
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--gray-500);
+}
+.footer-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--gray-500);
+  gap: 1.5rem;
+}
+.footer-body-title h4 {
+  margin: 0;
+  line-height: 0;
+  color: var(--white);
+  font-size: 2.125rem;
+}
+.footer-body-text {
+  max-width: 378px;
+  width: 100%;
+}
+.footer-body-text p {
+  margin-bottom: 0;
+  font-size: 12px;
+  color: var(--gray-500);
+}
+.footer-body-credits {
+  color: var(--gray-500);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.footer-body-credits nav a {
+  color: var(--gray-500);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  padding-right: 0.3rem;
+}
+.footer-body-credits nav a:hover {
+  color: var(--gray-100);
+}
+.footer-body-credits a {
+  color: var(--white);
+}
+.footer-body-credits a:hover {
+  color: #c0e02e;
+}
+.footer-body-credits p {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+}
+/*#endregion footer*/
+
+/*#region suscription form*/
+/* suscription form */
+.container-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-form {
+  width: 345px;
+  height: 40px;
+  border-radius: 60px;
+  overflow: hidden;
+}
+
+.subscription {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.subscription .add-email {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  background-color: var(--white-t10);
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--gray-500);
+  opacity: 1; /* Firefox */
+}
+
+.subscription .submit-email {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100% - 2px);
+  width: 100px;
+  border: none;
+  border-radius: 60px;
+  outline: none;
+  margin: 1px;
+  padding: 0 20px;
+  cursor: pointer;
+  background: var(--white-t50);
+  color: var(--primary-color);
+  transition: width 0.35s ease-in-out, background 0.35s ease-in-out;
+}
+
+.subscription.done .submit-email {
+  width: calc(100% - 2px);
+  background: #c0e02e;
+}
+
+.subscription .submit-email .before-submit,
+.subscription .submit-email .after-submit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 38px;
+  transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out;
+}
+
+.subscription.done .submit-email .before-submit,
+.subscription:not(.done) .submit-email .after-submit {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.subscription .submit-email .after-submit {
+  transition-delay: 0.35s;
+}
+
+.subscription:not(.done) .submit-email .before-submit,
+.subscription.done .submit-email .after-submit {
+  visibility: visible;
+  opacity: 1;
+}
+/*#endregion suscription form*/
+
+/*#region card container */
+#players-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
+  max-width: 1230px;
+  height: auto;
+  padding: 3.125rem 0px;
+}
+
+#card {
+  position: relative;
+  /* color: #725b16; */
+  color: var(--text-color);
+  width: 280px;
+  height: 446px;
+  background: #ddd;
+  margin: auto;
+  clip-path: url('#svgPath');
+  display: block;
+  cursor: pointer;
+  transform: rotate(0deg);
+  opacity: 1;
+  font-family: var(--f-player-std);
+}
+#card #card-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #aaa;
+  height: 100%;
+  width: 100%;
+}
+#card #card-inner #card-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 54%;
+  background: #1d1f25;
+  overflow: hidden;
+  /* background: linear-gradient(135deg, #fdeaa7 0%, #d8ad48 100%); */
+  background: var(--card-bg-color);
+}
+#card #card-inner #card-top .backfont {
+  position: absolute;
+  bottom: -188px;
+  line-height: 1;
+  font-size: 118px;
+  letter-spacing: -5px;
+  left: 0;
+  font-weight: 700;
+  font-style: italic;
+  mix-blend-mode: luminosity;
+}
+.opacity {
+  opacity: var(--bg-opacity);
+}
+#card #card-inner #card-top .playerImage {
+  position: absolute;
+  left: 46px;
+  top: 46px;
+  z-index: 4;
+}
+/* 
+#card #card-inner #card-top .image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  height: 75%;
+  width: 70%;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/Ronaldo.png');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+} */
+
+#card #card-inner #card-top #backfront {
+  position: relative;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  background-image: url('../img/cards/bg-card.svg');
+  background-repeat: no-repeat;
+}
+
+#card #card-inner #card-top .info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  height: 75%;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#card #card-inner #card-top .info div {
+  position: relative;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-size: 20px;
+  opacity: 1;
+  top: 0;
+}
+#card #card-inner #card-top .info div.value {
+  font-size: 38px;
+  font-weight: 500;
+}
+#card #card-inner #card-top .info div.position,
+#card #card-inner #card-top .info div.nationality {
+  font-weight: 400;
+}
+#card #card-inner #card-top .info div.border-bottom {
+  border-bottom: 1px solid var(--border-color);
+  width: 25px;
+  margin: 0 auto;
+}
+#card #card-inner #card-top .info div.nationality,
+#card #card-inner #card-top .info div.team {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 32px;
+  margin: 0 auto;
+  top: 4px;
+}
+/* #card #card-inner #card-top .info div.nationality div,
+#card #card-inner #card-top .info div.team div {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/portugal.png');
+} */
+#card #card-inner #card-top .info div.nationality.team,
+#card #card-inner #card-top .info div.team.team {
+  height: 60px;
+}
+
+/* #card #card-inner #card-top .info div.nationality.team div,
+#card #card-inner #card-top .info div.team.team div {
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/Juventus_Logo.png');
+} */
+#card #card-inner #card-bottom {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 46%;
+  background: #1d1f25;
+  /* background: linear-gradient(135deg, #fdeaa7 0%, #fcde75 100%); */
+  background: var(--card-bg-color);
+}
+#card #card-inner #card-bottom:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--border-color);
+}
+#card #card-inner #card-bottom .name {
+  text-align: center;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 1;
+  top: 0;
+  position: relative;
+  margin: 16px 0;
+}
+#card #card-inner #card-bottom .stats {
+  position: relative;
+  margin: 0 24px;
+  padding: 15px 0;
+  border-top: 1px solid var(--border-color);
+}
+#card #card-inner #card-bottom .stats:after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 1px;
+  width: 25%;
+  /* background: #fdeaa7; */
+  background: var(--border-color);
+}
+#card #card-inner #card-bottom .stats:before {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  margin: 5% auto;
+  height: 90%;
+  width: 1px;
+  /* background: #fdeaa7; */
+  background: var(--border-color);
+}
+#card #card-inner #card-bottom .stats div {
+  width: 49%;
+  vertical-align: top;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+#card #card-inner #card-bottom .stats div:last-child ul {
+  margin-left: 20px;
+}
+#card #card-inner #card-bottom .stats ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#card #card-inner #card-bottom .stats ul li {
+  margin: 0;
+  position: relative;
+  padding: 0 10px;
+  display: block;
+  margin-bottom: 5px;
+  opacity: 1;
+  left: 0;
+  font-weight: 400;
+}
+
+#card #card-inner #card-bottom .stats ul li span {
+  position: relative;
+  display: inline-block;
+}
+#card #card-inner #card-bottom .stats ul li span:first-child {
+  font-weight: 500;
+  width: 30px;
+  text-align: left;
+}
+
+/*#endregion card container */

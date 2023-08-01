@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/data.js" defer></script>
+    <title>Fifa Cards</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <section class="header">
+        <header>
+            <!-- Component -->
+            <div class="navbar-component">
+                <!-- Class `area` is a container -->
+                <div class="navbar area">
+                    <!-- Logo -->
+                    <a href="#" class="brand"><img src="img/logo.svg" alt="logo"></a>
+                    <!-- List of links -->
+                    <nav role="navigation" id="navigation" class="list">
+                        <a href="#" class="item -link">Team</a>
+                        <a href="#" class="item -link">Results</a>
+                        <a href="#" class="item -link">News</a>
+                        <a href="#" class="item -link">Tables</a>
+                        <a href="#" class="item -link">Legends</a>
+                        <!-- <span class="item"><i class="fa fa-search"></i></span> -->
+                    </nav>
+                    <!-- Button to toggle the display menu  -->
+                    <button data-collapse data-target="#navigation" class="toggle">
+                        <!-- Hamburger icon -->
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+            <!-- End nav -->
+            <div class="hero">
+                <div class="background"></div>
+                <div class="overlay">
+                    <img src="img/banner-man.png" alt="Banner Man" class="banner-man">
+                </div>
+            </div>
+        </header>
+    </section>
+    <!-- List of players -->
+    <section class="players">
+        <div class="players-header">
+            <h1>Football Players</h1>
+            <p>Explore an extensive database of football player statistics extracted from data.json, providing valuable
+                insights and information.</p>
+
+        </div>
+        <!-- template -->
+        <div id="players-cards" class="area"></div>
+        <!-- List of cards -->
+        <!-- add class="silver" to players-card id to have silver card mode -->
+        <!-- <div id="card" class="">
+                <svg width="280" height="446" viewBox="0 0 280 446" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="svgPath">
+                        <path
+                            d="M243.621 23.1862C243.479 21.7076 243.408 20.9683 243.039 20.4773C242.67 19.9863 242.044 19.7372 240.792 19.2391C209.6 6.82563 175.572 0 139.949 0C104.325 0 70.2975 6.82564 39.105 19.2391C37.8533 19.7372 37.2274 19.9863 36.8586 20.4773C36.4897 20.9683 36.4186 21.7076 36.2763 23.1862C34.639 40.198 21.2814 53.7892 4.36574 55.8062C2.19059 56.0656 1.10301 56.1953 0.551617 56.8158C0.000221409 57.4362 0.000221407 58.4353 0.000221407 60.4334V347.211C0.000221407 366.395 -0.11632 380.006 4.99816 386.94C10.1126 393.875 20.1073 397.066 38.9859 402.917C115.457 423.887 139.948 445.855 139.948 445.855C139.948 445.855 140.469 446.181 140.948 445.855C146.509 442.071 159.941 426.882 242.411 402.418C263.403 396.19 270.784 392.377 275.898 385.442C281.013 378.508 279.897 366.395 279.897 347.211V60.4334C279.897 58.4353 279.897 57.4362 279.346 56.8158C278.794 56.1953 277.707 56.0656 275.532 55.8062C258.616 53.7892 245.258 40.198 243.621 23.1862Z"
+                            fill="#14161B" />
+
+                    </clipPath>
+                </svg>
+                <div id="card-inner">
+                    <div id="card-top">
+
+                        <div class="info">
+                            <div class="value">94</div>
+                            <div class="position">st</div>
+                            <div class="border-bottom"></div>
+                            <div class="country">
+                                <div>
+                                    <img src="img/flags/belgium.jpg" alt="Belgica">
+                                </div>
+                            </div>
+                            <div class="border-bottom"></div>
+                            <div class="club">
+                                <div>
+                                    <img src="img/teams/manchester-united.png" alt="Chelsea" width="40px" height="40px">
+                                </div>
+                            </div>
+                        </div> -->
+
+
+        <!-- <div class="image"></div> [Image CSS]-->
+        <!-- <div class="image">
+                            <img src="/img/players/cristiano-ronaldo.png" alt="lukaku" width="240px">
+                        </div> -->
+        <!-- <div class="backfont">FUT19</div> [Text] -->
+
+        <!-- <div id="backfront" class="backfont opacity">
+                        </div>
+                    </div>
+                    <div id="card-bottom">
+                        <div class="name">Lukaku</div>
+                        <div class="stats">
+                            <div>
+                                <ul>
+                                    <li><span>89</span><span>pac</span></li>
+                                    <li><span>94</span><span>sho</span></li>
+                                    <li><span>81</span><span>pas</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li><span>90</span><span>dri</span></li>
+                                    <li><span>33</span><span>def</span></li>
+                                    <li><span>83</span><span>phy</span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div> -->
+    </section>
+    <!-- Footer -->
+    <section class="footer">
+        <div class="footer-header area">
+            <img src="img/legends/legend-team01.png" alt="team 1" width="115px" height="115px">
+            <img src="img/legends/legend-team02.png" alt="team 2" width="115px" height="115px">
+            <img src="img/legends/legend-team03.png" alt="team 3" width="115px" height="115px">
+            <img src="img/legends/legend-team04.png" alt="team 4" width="115px" height="115px">
+            <img src="img/legends/legend-team05.png" alt="team 5" width="115px" height="115px">
+            <img src="img/legends/legend-team06.png" alt="team 6" width="115px" height="115px">
+        </div>
+        <div class="footer-body area">
+            <div class="footer-body-title">
+                <h4>Sign up now</h4>
+            </div>
+            <div class="footer-body-text">
+                <p>Become a member of our online community and get tickets to upcoming matches or sports events
+                    faster!
+                </p>
+            </div>
+            <div class="container-form">
+                <div class="content-form">
+                    <form class="subscription">
+                        <input class="add-email" type="email" placeholder="subscribe@me.now">
+                        <button class="submit-email" type="button">
+                            <span class="before-submit">Subscribe</span>
+                            <span class="after-submit">Thank you for subscribing!</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-body-credits area">
+            <div class="footer-body-credits-nav">
+                <nav>
+                    <a href="#">Team</a>
+                    <a href="#">Results</a>
+                    <a href="#">News</a>
+                    <a href="#">Tables</a>
+                    <a href="#">Legends</a>
+                    <!-- <span class="item"><i class="fa fa-search"></i></span> -->
+                </nav>
+            </div>
+            <div class="footer-body-credits-author">
+                <p>Visit my github on <a href="https://github.com/codenaud">@codenaud</a> </p>
+            </div>
+        </div>
+
+    </section>
+    <!-- Template -->
+    <template id="template-players-cards">
+        <div id="player-cards">
+            <!-- List of cards -->
+            <!-- add class="silver" to players-card id to have silver card mode -->
+            <div id="card" class="">
+                <svg width="280" height="446" viewBox="0 0 280 446" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="svgPath">
+                        <path
+                            d="M243.621 23.1862C243.479 21.7076 243.408 20.9683 243.039 20.4773C242.67 19.9863 242.044 19.7372 240.792 19.2391C209.6 6.82563 175.572 0 139.949 0C104.325 0 70.2975 6.82564 39.105 19.2391C37.8533 19.7372 37.2274 19.9863 36.8586 20.4773C36.4897 20.9683 36.4186 21.7076 36.2763 23.1862C34.639 40.198 21.2814 53.7892 4.36574 55.8062C2.19059 56.0656 1.10301 56.1953 0.551617 56.8158C0.000221409 57.4362 0.000221407 58.4353 0.000221407 60.4334V347.211C0.000221407 366.395 -0.11632 380.006 4.99816 386.94C10.1126 393.875 20.1073 397.066 38.9859 402.917C115.457 423.887 139.948 445.855 139.948 445.855C139.948 445.855 140.469 446.181 140.948 445.855C146.509 442.071 159.941 426.882 242.411 402.418C263.403 396.19 270.784 392.377 275.898 385.442C281.013 378.508 279.897 366.395 279.897 347.211V60.4334C279.897 58.4353 279.897 57.4362 279.346 56.8158C278.794 56.1953 277.707 56.0656 275.532 55.8062C258.616 53.7892 245.258 40.198 243.621 23.1862Z"
+                            fill="#14161B" />
+
+                    </clipPath>
+                </svg>
+                <div id="card-inner">
+                    <div id="card-top">
+
+                        <div class="info">
+                            <div id="value" class="value">100</div>
+                            <div id="position" class="position">st</div>
+                            <div class="border-bottom"></div>
+                            <div id="nationality" class="nationality">
+                                <div>
+                                    <img src="img/flags/belgium.jpg" alt="Belgica">
+                                </div>
+                            </div>
+                            <div class="border-bottom"></div>
+                            <div id="team" class="team">
+                                <div>
+                                    <img src="img/teams/manchester-united.png" alt="Chelsea" width="40px" height="40px">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="image"></div> [Image CSS]-->
+                        <div id="playerImage" class="playerImage">
+                            <img src="/img/players/cristiano-ronaldo.png" alt="lukaku" width="240px">
+                        </div>
+                        <!-- <div class="backfont">FUT19</div> [Text] -->
+
+                        <div id="backfront" class="backfont opacity">
+                        </div>
+                    </div>
+                    <div id="card-bottom">
+                        <div id="playerName" class="name">Lukaku</div>
+                        <div id="stats" class="stats">
+                            <div>
+                                <ul>
+                                    <li><span id="pac">89</span><span>pac</span></li>
+                                    <li><span id="sho">94</span><span>sho</span></li>
+                                    <li><span id="pas">81</span><span>pas</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li><span id="drib">90</span><span>dri</span></li>
+                                    <li><span id="def">33</span><span>def</span></li>
+                                    <li><span id="phy">83</span><span>phy</span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </template>
+</body>
+
+</html>
